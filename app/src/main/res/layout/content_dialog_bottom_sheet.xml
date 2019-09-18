@@ -1,28 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/bottomSheetLayout"
+    android:id="@+id/bottom_sheet_layout"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
-    android:background="@android:color/holo_red_light"
+    android:layout_height="match_parent"
     android:padding="@dimen/activity_vertical_margin"
     app:behavior_hideable="true"
-    app:behavior_peekHeight="60dp"
+    android:minHeight="2000dp"
+    android:orientation="vertical"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
-    <TextView
+    <TextView android:layout_alignParentTop="true"
         android:id="@+id/bottomSheetHeading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/text_dialog_bottom_sheet"
-        android:textAppearance="@android:style/TextAppearance.Large" />
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        />
 
-    <TextView
+    <EditText android:layout_below="@+id/bottomSheetHeading"
+        android:id="@+id/bottomSheetInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:lines="1"
+        android:inputType="text"
+        android:layout_margin="@dimen/activity_horizontal_margin" />
+
+    <Button android:layout_below="@+id/bottomSheetInput"
+        android:id="@+id/bottomSheetSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bottomSheetHeading"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:text="@string/text_welcome_message"
-        android:textAppearance="@android:style/TextAppearance.Large" />
+        android:layout_gravity="center"
+        android:text="submit"
+        android:layout_margin="@dimen/activity_horizontal_margin" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
+        android:gravity="bottom"/>
+
 </RelativeLayout>
